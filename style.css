@@ -1,0 +1,1047 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Inter", "Italiana", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  color: #eeeeee;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media (min-width: 320px) {
+  /*loading screen*/
+  .loadingScreen {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    background-color: #000;
+    z-index: 5;
+    overflow: hidden;
+  }
+
+  .loadingScreen ul {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .liItem {
+    font-family: "Italiana", sans-serif;
+    font-size: 6rem;
+    font-weight: bolder;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(150%) rotate(2deg);
+  }
+
+  /*nav*/
+  header {
+    position: relative;
+    height: 95vh;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navTitles {
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 40%;
+    width: 100%;
+  }
+
+  .navTitles h2 {
+    font-size: 9rem;
+  }
+
+  .navTitles .Maison {
+    display: flex;
+    align-self: flex-end;
+    font-size: 2rem;
+    font-family: "Inter";
+  }
+
+  .navSubs {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+    height: 60%;
+  }
+
+  .navSubs h3 {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+
+  .navSubs p {
+    color: #eeeeee;
+    font-size: 1.4rem;
+  }
+
+  .madeBy,
+  .WhichProduct,
+  .textAboutEstrategy {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .textAboutEstrategy p {
+    padding-right: 1em;
+  }
+
+  /*fixed nav*/
+  .fixedNav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navItems {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0em 1em;
+    height: 100%;
+    font-size: 1.6rem;
+    z-index: 4;
+  }
+
+  .logo {
+    cursor: pointer;
+    margin-top: 1em;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .language {
+    display: flex;
+    gap: 5px;
+    cursor: default;
+  }
+
+  .menu {
+    cursor: pointer;
+  }
+
+  /*menu*/
+  .menuContainer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+  }
+
+  .menuContainer.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menuTab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    width: 90%;
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 1em;
+    top: 1.3em;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 6000;
+  }
+
+  .closeBtn:hover {
+    color: #c0c0c0;
+  }
+
+  .menuTab ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .liCase {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .menuTab ul li {
+    font-size: 6rem;
+    transform: translateY(100%);
+  }
+
+  .alert {
+    position: absolute;
+    bottom: 4em;
+    font-size: 2rem;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  /*hero*/
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .heroBg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+  }
+
+  .heroBg img {
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .heroBg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /*.heroBg.show::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }*/
+
+  h1 {
+    position: relative;
+    font-family: "Italiana", sans-serif;
+    font-size: 8rem;
+  }
+
+  .hero p {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+  }
+
+  .hero span {
+    position: absolute;
+    font-family: "Italiana", sans-serif;
+    bottom: 5em;
+    font-size: 2rem;
+    opacity: 1;
+  }
+
+  /*.heroTextContainer {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: 100vh;
+    border: solid 1px #fff;
+  }
+
+  .heroText {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateY(100%);
+    padding-bottom: 10vh;
+    opacity: 0;
+  }
+
+  .heroText h2 {
+    font-size: 4rem;
+    font-weight: bolder;
+  }
+
+  .heroText p {
+    font-size: 1.6rem;
+    padding: 1.5em;
+  }
+
+  .heroText .boldedPhrase {
+    font-weight: bold;
+  }*/
+
+  /*craft materials*/
+  .craftMaterials {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .linesGrid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    background-color: #000;
+  }
+
+  .lines {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 80%;
+  }
+
+  .centerLine {
+    height: 2px;
+    width: 100%;
+    background: #c0c0c0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .centerYline {
+    position: absolute;
+    height: 2px;
+    width: 40%;
+    background: #c0c0c0;
+  }
+
+  .lateralLine {
+    position: absolute;
+    height: 2px;
+    width: 60%;
+    background: #c0c0c0;
+  }
+
+  .lateralRightLine {
+    position: absolute;
+    height: 2px;
+    width: 60%;
+    background: #c0c0c0;
+  }
+
+  .lateralMiniLine {
+    position: absolute;
+    height: 2px;
+    width: 25%;
+    background: #c0c0c0;
+  }
+
+  .lateralMiniRightLine {
+    position: absolute;
+    height: 2px;
+    width: 25%;
+    background: #c0c0c0;
+  }
+
+  .linesGrid img {
+    position: absolute;
+    height: 180px;
+  }
+
+  .materialCase {
+    position: relative;
+    width: 100%;
+    height: 75%;
+  }
+
+  .Material {
+    position: absolute;
+    font-family: "Italiana", sans-serif;
+    font-weight: bold;
+    z-index: 2;
+    font-size: 2.5rem;
+    min-width: 200px;
+    max-width: 500px;
+    opacity: 1;
+  }
+
+  .material1 {
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .material2 {
+    top: 40%;
+    left: 3%;
+  }
+
+  .material3 {
+    top: 85%;
+    left: 50%;
+    transform: translateX(-40%);
+  }
+
+  .material4 {
+    top: 95%;
+    left: 90%;
+    transform: translateX(-70%);
+  }
+
+  /*craft details*/
+  .craftDetailsContainer {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 145px;
+    align-items: center;
+    justify-content: center;
+    padding: 9em 0em;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .craftDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9em;
+    width: 80%;
+    height: 100%;
+  }
+
+  .Titles {
+    width: 100%;
+  }
+
+  h2 {
+    font-family: "Italiana", sans-serif;
+    font-size: 5rem;
+  }
+
+  .craftDetailsContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    width: 100%;
+    height: 100%;
+    align-items: end;
+  }
+
+  .firstHalf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .firstHalf img {
+    position: relative;
+    height: 280px;
+    z-index: 1;
+  }
+
+  .secondHalf {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .secondHalf p {
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 30px;
+    color: #555;
+  }
+
+  /*advantages dinamic section*/
+  .advantagesContainer {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .advantagesContainer h2 {
+    display: flex;
+    align-self: start;
+    margin-left: 10%;
+  }
+
+  .advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+  }
+
+  .lists {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .lists ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+  }
+
+  .lists ul li {
+    font-size: 1.6rem;
+    opacity: 0;
+  }
+
+  .wrapperAnimation {
+    position: relative;
+  }
+
+  /*about atelie section*/
+  .LAtellierMaisonNoire {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    z-index: 1;
+    background-color: #000;
+  }
+
+  .Localbanner {
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .Localbanner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  .BannerAndTextGrid {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .atelierGuyBanner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .atelierGuyBanner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .aboutGrid {
+    margin-top: 3em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .parllaxMark {
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 90%;
+  }
+
+  .AboutAtelier {
+    width: 90%;
+  }
+
+  /*galery*/
+  .scenePhotos {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 120px;
+    z-index: 2;
+    background-color: #000;
+  }
+
+  .Scene {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .SceneRight {
+    align-self: flex-end;
+  }
+
+  .Scene h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .SceneRight h3 {
+    text-align: right;
+  }
+
+  .Scene img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 2em;
+    background-color: #000;
+  }
+
+  .footer-phrase {
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-links {
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #eeeeee;
+    font-size: 1.5rem;
+  }
+
+  footer h2 {
+    font-family: "Italiana", sans-serif;
+    font-size: 9rem;
+  }
+
+  footer button {
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  /*loading screen*/
+  .loadingScreen {
+    justify-content: start;
+  }
+
+  .loadingScreen ul {
+    align-items: start;
+    padding-left: 2em;
+    justify-content: start;
+  }
+
+  .liItem {
+    font-size: 16rem;
+  }
+
+  /*nav*/
+  header {
+    height: 70vh;
+  }
+
+  .navTitles {
+    flex-direction: row;
+  }
+
+  .navTitles h2 {
+    font-size: 13rem;
+  }
+
+  .navSubs {
+    display: grid;
+    padding: 1em;
+    height: 60%;
+    grid-template-columns: 25% 25% 50%;
+    gap: 0em;
+  }
+
+  .textAboutEstrategy p {
+    padding-right: 16em;
+  }
+
+  .ptBtn:hover,
+  .enBtn:hover,
+  .frBtn:hover {
+    cursor: pointer;
+    color: #c0c0c0;
+  }
+
+  .menu {
+    cursor: pointer;
+  }
+
+  .menu:hover {
+    color: #c0c0c0;
+  }
+
+  /*menu*/
+  .alert {
+    bottom: 1em;
+  }
+
+  /*hero*/
+  h1 {
+    font-size: 16rem;
+    cursor: default;
+  }
+
+  .hero p {
+    font-size: 2.8rem;
+  }
+
+  .hero span {
+    bottom: 1em;
+    font-size: 2.4rem;
+  }
+
+  .heroText h2 {
+    font-size: 6rem;
+  }
+
+  .heroText p {
+    font-size: 2rem;
+  }
+
+  .heroText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateY(100%);
+    padding-bottom: 10vh;
+    opacity: 0;
+  }
+
+  .heroBg img {
+    object-fit: contain;
+  }
+
+  /*craft materials*/
+  .Material {
+    font-size: 7rem;
+    min-width: 300px;
+    max-width: 900px;
+  }
+
+  .material1 {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .material2 {
+    top: 40%;
+    left: 20%;
+  }
+
+  .material3 {
+    top: 85%;
+    left: 50%;
+    transform: translateX(-40%);
+  }
+
+  .material4 {
+    top: 95%;
+    left: 90%;
+    transform: translateX(-90%);
+  }
+
+  /*craft details*/
+  h2 {
+    font-size: 8rem;
+  }
+
+  .craftDetails .Title2 {
+    font-size: 6rem;
+  }
+
+  .craftDetailsContent {
+    flex-direction: row;
+  }
+
+  .firstHalf {
+    width: 50%;
+  }
+
+  .secondHalf {
+    justify-content: right;
+    align-items: center;
+    width: 50%;
+  }
+
+  .secondHalf p {
+    width: 80%;
+    font-size: 1.6rem;
+    line-height: 30px;
+  }
+
+  /*advantages dinamic section*/
+  .lists {
+    flex-direction: row;
+    gap: 90px;
+  }
+
+  .lists ul {
+    align-items: start;
+    gap: 6em;
+  }
+
+  .lists ul li {
+    font-size: 2rem;
+  }
+
+  /*about atelie section*/
+  .BannerAndTextGrid {
+    flex-direction: row;
+  }
+
+  .atelierGuyBanner {
+    width: 50%;
+  }
+
+  .aboutGrid {
+    width: 50%;
+    gap: 5em;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .parllaxMark {
+    width: 20%;
+  }
+
+  .AboutAtelier {
+    width: 50%;
+  }
+
+  /*galery*/
+  .scenePhotos {
+    gap: 60px;
+  }
+
+  .Scene {
+    width: 48%;
+    height: 280px;
+  }
+
+  footer h2 {
+    font-size: 21rem;
+  }
+
+  footer button {
+    cursor: pointer;
+  }
+
+  .footer-links a {
+    color: #555;
+    transition: 0.5s ease;
+  }
+
+  .footer-links a:hover {
+    color: #eeeeee;
+  }
+}
+
+@media (min-width: 1920px) {
+  header {
+    height: 75vh;
+  }
+
+  .liItem {
+    font-size: 23rem;
+  }
+
+  .navTitles h2 {
+    font-size: 16rem;
+  }
+
+  .navTitles .Maison {
+    font-size: 3rem;
+  }
+
+  .navSubs h3 {
+    font-size: 2.6rem;
+  }
+
+  .navSubs p {
+    font-size: 2.4rem;
+  }
+
+  .navItems {
+    font-size: 2.6rem;
+  }
+
+  .fixedNav {
+    height: 90px;
+  }
+
+  .RelativeNav {
+    height: 90px;
+  }
+
+  .logo img {
+    height: 90px;
+  }
+
+  .closeBtn {
+    top: 0.9em;
+    right: 0.7em;
+    font-size: 3rem;
+  }
+
+  h1 {
+    font-size: 16rem;
+  }
+
+  h2 {
+    font-size: 12rem;
+  }
+
+  .firstHalf img {
+    height: 380px;
+  }
+
+  .secondHalf p {
+    font-size: 2.6rem;
+  }
+
+  .lists ul {
+    gap: 7em;
+  }
+
+  .lists ul li {
+    font-size: 3rem;
+  }
+
+  .aboutGrid {
+    font-size: 2.4rem;
+  }
+
+  .Scene {
+    height: 380px;
+  }
+
+  .footer-phrase {
+    font-size: 2.5rem;
+  }
+
+  .footer-links a {
+    font-size: 2.5rem;
+  }
+
+  footer button {
+    font-size: 3rem;
+  }
+}
