@@ -126,6 +126,7 @@ html {
 
   .RelativeNav {
     height: 10%;
+    padding: 0 1rem;
   }
 
   .navItemsRelative {
